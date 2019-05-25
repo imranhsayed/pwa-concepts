@@ -10,7 +10,12 @@ These instructions will get you a copy of the project up and running on your loc
 Basic knowledge of HTML CSS and JavaScript.
 
 ## Service Workers
+
+#### Registration
 ![](service-workers.png)
+
+### Installation
+![](service-worker-installed.png)
 
 ## Service worker lifecycle
 A service worker goes through three steps in its lifecycle:
@@ -30,6 +35,18 @@ if( 'serviceWorker' in navigator ) {
         .catch( err => console.log('Service worker registration failed, error:', err) );
 }
 ```
+
+### 2. Installation of Service Worker
+A service worker installation triggers an install event in the installing service worker. 
+
+```ruby
+// Listen for install event, set callback
+self.addEventListener('install', function(event) {
+    // Perform some task
+});
+```
+
+### 2. Activation of Service Worker
 
 ## Installation :wrench:
 
