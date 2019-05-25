@@ -11,11 +11,22 @@ Basic knowledge of HTML CSS and JavaScript.
 
 ## Service Workers
 
+### What are Service Workers?
+A service worker is an event-driven javascript file, that is run in your browser in the background, separate from your webpage.
+
+* act as a caching agent 
+* handle network requests,
+* store content for offline usage, using caching and 
+* handle push messaging even when your browser is closed.
+
 #### Registration
 ![](service-workers.png)
 
 ### Installation
 ![](service-worker-installed.png)
+
+### Cache Storage
+![](cache-storage.png)
 
 ## Service worker lifecycle
 A service worker goes through three steps in its lifecycle:
@@ -41,12 +52,18 @@ A service worker installation triggers an install event in the installing servic
 
 ```ruby
 // Listen for install event, set callback
-self.addEventListener('install', function(event) {
+self.addEventListener('install', ( event ) => {
     // Perform some task
 });
 ```
 
 ### 2. Activation of Service Worker
+
+```ruby
+self.addEventListener( 'activate', ( event ) => {
+    console.log( 'Service worker Activated' )
+} );
+```
 
 ## Installation :wrench:
 
