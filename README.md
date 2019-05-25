@@ -17,6 +17,10 @@ Basic knowledge of HTML CSS and JavaScript.
 
 ## Use :point_right:
 
+## Training Links
+
+1. [Service Workers Documentation](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker)
+
 ## Contributing :busts_in_silhouette:
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
