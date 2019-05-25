@@ -1,3 +1,23 @@
 body {
     color: blue;
 }
+
+.nav {
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
+    padding: 16px;
+    color: #fff;
+}

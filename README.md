@@ -13,6 +13,7 @@ Basic knowledge of HTML CSS and JavaScript.
 
 1. Clone this repo by running `git clone git@github.com:imranhsayed/pwa-concepts.git`
 2. `cd pwa-concepts`
+3. Install `Live Server` plugin from VS Code
 
 ## Use :point_right:
 
