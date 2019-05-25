@@ -9,6 +9,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 Basic knowledge of HTML CSS and JavaScript.
 
+## Service Workers
+![](service-workers.png)
+
 ## Service worker lifecycle
 A service worker goes through three steps in its lifecycle:
 
@@ -20,14 +23,11 @@ A service worker goes through three steps in its lifecycle:
 To install a service worker, you need to register it in your main JavaScript code. Registration tells the browser where your service worker is located, and to start installing it in the background. Let's look at an example:
 
 ```ruby
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-  .then(function(registration) {
-    console.log('Registration successful, scope is:', registration.scope);
-  })
-  .catch(function(error) {
-    console.log('Service worker registration failed, error:', error);
-  });
+if( 'serviceWorker' in navigator ) {
+    navigator.serviceWorker
+        .register( './service-worker-cached.js' )
+        .then( registeration => console.log('Registration successful, scope is:', registeration.scope) )
+        .catch( err => console.log('Service worker registration failed, error:', err) );
 }
 ```
 
