@@ -28,6 +28,10 @@ A service worker is an event-driven javascript file, that is run in your browser
 ### Cache Storage
 ![](cache-storage.png)
 
+## Demo Serve Pages Offline using Service Workers :video_camera:
+
+![](demo-service-workers.gif)
+
 ## Service worker lifecycle
 A service worker goes through three steps in its lifecycle:
 
