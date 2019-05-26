@@ -1,0 +1,23 @@
+{
+  "name": "pwa-concepts",
+  "version": "1.0.0",
+  "description": "> * A demo for PWA Concepts.",
+  "main": "main.js",
+  "scripts": {
+    "test": "http-server -c-1 -p 8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imranhsayed/pwa-concepts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imranhsayed/pwa-concepts/issues"
+  },
+  "homepage": "https://github.com/imranhsayed/pwa-concepts#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

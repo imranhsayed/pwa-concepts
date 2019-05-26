@@ -69,6 +69,12 @@ self.addEventListener( 'activate', ( event ) => {
 } );
 ```
 
+## What is a [manifest file](https://developers.google.com/web/fundamentals/web-app-manifest/) for Web App?
+
+* The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop.
+* Having a manifest is required by Chrome to show the Add to Home Screen prompt.
+* A typical manifest file includes information about the app name, icons it should use, the start_url it should start at when launched, and more.
+
 ## Installation :wrench:
 
 1. Clone this repo by running `git clone git@github.com:imranhsayed/pwa-concepts.git`
@@ -78,6 +84,11 @@ self.addEventListener( 'activate', ( event ) => {
 ## Branches Information
 
 1. [service-worker-app](https://github.com/imranhsayed/pwa-concepts/tree/service-worker-app) A simple Service worker app.
+
+2. [pwa-app-http-server](https://github.com/imranhsayed/pwa-concepts/tree/pwa-app-http-server) A PWA app 
+
+##### Command
+* `npm run start` Starts your development server on [http://localhost:8081](http://localhost:8081)
 
 ## Use :point_right:
 
