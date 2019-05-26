@@ -75,6 +75,10 @@ self.addEventListener( 'activate', ( event ) => {
 2. `cd pwa-concepts`
 3. Install `Live Server` plugin from VS Code
 
+## Branches Information
+
+1. [service-worker-app](https://github.com/imranhsayed/pwa-concepts/tree/service-worker-app) A simple Service worker app.
+
 ## Use :point_right:
 
 ## Training Links :mortar_board:
