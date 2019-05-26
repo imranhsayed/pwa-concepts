@@ -4,7 +4,7 @@
   "description": "> * A demo for PWA Concepts.",
   "main": "main.js",
   "scripts": {
-    "test": "http-server -c-1 -p 8081"
+    "start": "http-server -c-1 -p 8081"
   },
   "repository": {
     "type": "git",
