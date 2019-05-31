@@ -90,7 +90,9 @@ self.addEventListener( 'activate', ( event ) => {
 ##### Command
 * `npm run start` Starts your development server on [http://localhost:8081](http://localhost:8081)
 
-## Use :point_right:
+## Useful Link :point_right:
+
+1. [Genrate Favicon](https://realfavicongenerator.net)
 
 ## Training Links :mortar_board:
 
