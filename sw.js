@@ -1,5 +1,5 @@
 // Cache version.
-const cacheName = 'CSv1';
+const cacheName = 'CSv3';
 
 /**
  * Paths for the files to be cached.
@@ -53,4 +53,41 @@ self.addEventListener( 'install', ( event ) => {
 			.then( () => self.skipWaiting() )
 			.catch( err => console.warn( err ) )
 	);
+});
+
+
+/*
+ * Remove any caches created from the previous version, when the SW is activated
+ *
+ */
+self.addEventListener( 'activate', ( event ) => {
+
+	console.warn( 'Service Worker Activated' );
+
+	/**
+	 * Global cache object has a keys method that contains the previous cached items
+	 */
+	event.waitUntil(
+		caches.keys()
+			.then( keyList => {
+
+				console.warn( 'Deleting old Cached Files');
+
+				// The Promise.all() will fail if any promise method inside of it fails
+				return Promise.all( keyList.map( key => {
+					if ( key !== cacheName ) {
+
+						console.warn( 'Deleting old Cached File with Key', key );
+
+						// Delete that cache with that key
+						return caches.delete( key );
+					}
+				} ) )
+
+			} )
+	);
+
+	// This helps, service Worker claims all of the clients in the scope of the SW.
+	// So that any further events apply to all the pages
+	return self.clients.claim();
 });
