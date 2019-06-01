@@ -57,7 +57,8 @@ self.addEventListener( 'install', ( event ) => {
 
 
 /*
- * Remove any caches created from the previous version, when the SW is activated
+ * Check the global cache variable, If the new cache version is not the same as the old one delete the old cache
+ * , when the SW is activated
  *
  */
 self.addEventListener( 'activate', ( event ) => {
@@ -91,3 +92,20 @@ self.addEventListener( 'activate', ( event ) => {
 	// So that any further events apply to all the pages
 	return self.clients.claim();
 });
+
+/**
+ * The fetch event is called when any request is made on PWA.
+ *
+ * Then we can respond with the cached files.
+ */
+self.addEventListener( 'fetch', ( event ) => {
+
+	console.warn( `Fetch event occured on url: ${event.request.url}` );
+
+	/**
+	 * respondWith() takes a promise
+	 * Global cache object contains a match(), which will look for a corresponding page, based on the URL and the method and
+	 * return the response.
+	 */
+	event.respondWith( caches.match( event.request )  );
+} );
