@@ -12,6 +12,24 @@ function toggleNav(){
     hidden = !hidden;
 }
 
+const handlePushNotification = () => {
+	// Check if notifications are supported
+	if ( 'Notification' in window ) {
+		console.warn( 'Notifications are supported' );
+
+		/**
+		 * Request permission from user to send notifications.
+		 *
+		 */
+		Notification.requestPermission().then( ( result ) => {
+			console.warn( 'Notification Status', result );
+			if ( 'granted' === result ) {
+
+			}
+		} )
+	}
+};
+
 // Check if the serviceWorker Object exists in the navigator object ( means if browser supports SW )
 if ( 'serviceWorker' in navigator ) {
 
@@ -22,6 +40,8 @@ if ( 'serviceWorker' in navigator ) {
 	navigator.serviceWorker.register( '/sw.js' )
 		.then( ( res ) => {
 			console.warn( `Sevice Worker Registered ${res.scope}` );
+			// Handle Push Notification, only once the service worker is registered
+			handlePushNotification();
 		} )
 		.catch( err => console.warn( 'SW registration failed' + err ) )
 
