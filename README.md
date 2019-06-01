@@ -83,7 +83,8 @@ self.addEventListener( 'activate', ( event ) => {
 
 ## Branches Information
 
-1. [service-worker-app](https://github.com/imranhsayed/pwa-concepts/tree/service-worker-app) A simple Service worker app.
+1. [simple-pwa-app](https://github.com/imranhsayed/pwa-concepts/tree/simple-pwa-app) A simple PWA App.
+2. [service-worker-app](https://github.com/imranhsayed/pwa-concepts/tree/service-worker-app) A simple Service worker app.
 
 2. [pwa-app-http-server](https://github.com/imranhsayed/pwa-concepts/tree/pwa-app-http-server) A PWA app 
 
