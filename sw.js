@@ -72,7 +72,7 @@ self.addEventListener( 'activate', ( event ) => {
 		caches.keys()
 			.then( keyList => {
 
-				console.warn( 'Deleting old Cached Files');
+				console.warn( 'Check if there is a new cache version');
 
 				// The Promise.all() will fail if any promise method inside of it fails
 				return Promise.all( keyList.map( key => {
