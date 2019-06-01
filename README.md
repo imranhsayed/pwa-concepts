@@ -27,14 +27,14 @@ A service worker is an event-driven javascript file, that is run in your browser
 
 1. We register a Service Worker ( in main.js )
 2. Create a Service Worker file called `sw.js` and perform the below operations inside that.
-3. Define the cacheName and paths for the files to be cached inside `sw.js`
-4. We listen to install event and cache all files we defined above, when the service worker is installed.
-5. We listen to activate event and delete the old version of the cache, if there is a new version of cache available
-6. We listen to the fetch event, the request is made on PWA, we fetch the content from the cache if its available otherwise we make a network request.
+3. Define `cacheName` and paths for the files to be cached inside `sw.js`
+4. We listen to `install` event and `cache all files` we defined above, when the service worker is installed.
+5. We listen to `activate` event and `delete the old version` of the cache, if there is a new version of cache available
+6. We listen to the `fetch` event, the request is made on PWA, we `fetch the content from the cache` if its available otherwise we make a network request.
 7. Add the icons for PWA
-8. Add a manifest.json file and add the required fields and values
-9. Add relevant meta tags, link your manifest.json file and include your main.js file, in `index.html`
-10. Once done perform a lighthouse audit your site for PWA , under performance tab in chrome developer tool.
+8. Add a `manifest.json` file and add the required fields and values
+9. Add relevant `meta tags`, link your manifest.json file and include your main.js file, in `index.html`
+10. Once done perform a `lighthouse audit` your site for PWA , under performance tab in chrome developer tool.
 
 
 #### Registration
