@@ -97,6 +97,7 @@ self.addEventListener( 'activate', ( event ) => {
 ## Training Links :mortar_board:
 
 1. [Service Workers Documentation](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker)
+2. [Service Worker Strategy Cookbook](https://serviceworke.rs/)
 
 ## Contributing :busts_in_silhouette:
 
