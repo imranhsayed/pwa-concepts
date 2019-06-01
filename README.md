@@ -85,9 +85,9 @@ self.addEventListener( 'activate', ( event ) => {
 
 1. [simple-progressive-web-app](https://github.com/imranhsayed/pwa-concepts/tree/simple-progressive-web-app) A Simple Progressive Web App
 2. [pwa-with-custom-prompt](https://github.com/imranhsayed/pwa-concepts/tree/pwa-with-custom-prompt) A Simple Progressive Web App with custom Add To Home Screen Mobile Prompt.
-2. [service-worker-app](https://github.com/imranhsayed/pwa-concepts/tree/service-worker-app) A simple Service worker app.
+3. [service-worker-app](https://github.com/imranhsayed/pwa-concepts/tree/service-worker-app) A simple Service worker app.
 
-2. [pwa-app-http-server](https://github.com/imranhsayed/pwa-concepts/tree/pwa-app-http-server) A Progressive Web App 
+4. [pwa-app-http-server](https://github.com/imranhsayed/pwa-concepts/tree/pwa-app-http-server) A Progressive Web App 
 
 ##### Command
 * `npm run start` Starts your development server on [http://localhost:8081](http://localhost:8081)
