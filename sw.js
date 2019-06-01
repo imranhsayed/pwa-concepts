@@ -107,5 +107,19 @@ self.addEventListener( 'fetch', ( event ) => {
 	 * Global cache object contains a match(), which will look for a corresponding page, based on the URL and the method and
 	 * return the response.
 	 */
-	event.respondWith( caches.match( event.request )  );
+	event.respondWith(
+
+		// This will look for the requested url ( event.request ) into cache first
+		caches.match( event.request )
+			.then( response => {
+
+				/**
+				 * If the requested url is present in the cache it will return response from cache,
+				 * else make a network request for that url using fetch().
+				 * So response variable is the cached page here.
+				 * If the first operand before || evaluates to true, the second is not evaluated.
+				 */
+				return response || fetch( event.request )
+			} )
+	);
 } );
