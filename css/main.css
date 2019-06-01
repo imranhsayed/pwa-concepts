@@ -188,7 +188,7 @@ nav a:hover {
 
 .facultyContainer{
     padding: 5px;
-    
+
 }
 .facultyImage{
     float: left;
@@ -243,6 +243,25 @@ aside a{
     margin-top: 40px;
 }
 
+#addToHomeScreen {
+	margin-top: 20px;
+	padding: 0;
+	display: none;
+}
+
+#addToHomeScreen img {
+	max-width: 57px;
+	margin: 10px;
+	float: left;
+}
+
+#addToHomeScreen button {
+	background-color: #264de4;
+	color: #fff;
+	border: 1px solid #2965f1;
+	margin: 5px 10px;
+}
+
 
 /* ==========================================================================
    Media Queries
@@ -272,7 +291,7 @@ aside a{
     #trigger{
         display: block;
     }
-    
+
 
 /* ========================
     INTERMEDIATE: IE Fixes
@@ -333,7 +352,7 @@ aside a{
         float: right;
         width: 28%;
     }
-    
+
     .main-container{
         margin-top: 100px;
     }
