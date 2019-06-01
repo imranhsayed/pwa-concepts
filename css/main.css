@@ -243,26 +243,6 @@ aside a{
     margin-top: 40px;
 }
 
-#addToHomeScreen {
-	margin-top: 20px;
-	padding: 2px 6px 14px 14px;
-	display: none;
-}
-
-#addToHomeScreen img {
-	max-width: 57px;
-	margin: 10px;
-	float: left;
-}
-
-#addToHomeScreen button {
-	background-color: #264de4;
-	color: #fff;
-	border: 1px solid #2965f1;
-	margin: 5px 10px;
-}
-
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
