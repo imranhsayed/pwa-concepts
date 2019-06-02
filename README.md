@@ -1,9 +1,12 @@
 # PWA Concepts
 > * A demo for PWA Concepts.
 
-## Demo Serve Pages Offline using Service Workers :video_camera:
+## Serve Pages Offline using Service Workers Demo :video_camera:
 
 ![](demo-service-workers.gif)
+
+## Sending Notifications in a PWA Demo :video_camera:
+![](Notification.gif)
 
 ## Getting Started :rocket:
 
@@ -132,7 +135,8 @@ if ( 'serviceWorker' in navigator ) {
 2. [pwa-with-custom-prompt](https://github.com/imranhsayed/pwa-concepts/tree/pwa-with-custom-prompt) A Simple Progressive Web App with custom Add To Home Screen Mobile Prompt.
 3. [service-worker-app](https://github.com/imranhsayed/pwa-concepts/tree/service-worker-app) A simple Service worker app.
 
-4. [pwa-app-http-server](https://github.com/imranhsayed/pwa-concepts/tree/pwa-app-http-server) A Progressive Web App 
+4. [pwa-app-http-server](https://github.com/imranhsayed/pwa-concepts/tree/pwa-app-http-server) A Progressive Web App5. [send-notification-user-nav](https://github.com/imranhsayed/pwa-concepts/tree/send-notification-user-nav) Example of sending Notification in a PWA app. And when the user clicks on the notification, we can navigate him the section of the page we want 
+5. [send-notification-user-nav](https://github.com/imranhsayed/pwa-concepts/tree/send-notification-user-nav) Example of sending Notification in a PWA app. And when the user clicks on the notification, we can navigate him the section of the page we want 
 
 ##### Command
 * `npm run start` Starts your development server on [http://localhost:8081](http://localhost:8081)
