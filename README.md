@@ -89,6 +89,37 @@ self.addEventListener( 'activate', ( event ) => {
 * Having a manifest is required by Chrome to show the Add to Home Screen prompt.
 * A typical manifest file includes information about the app name, icons it should use, the start_url it should start at when launched, and more.
 
+## How does push notification work?
+
+> You need to ensure that you change the cache version name in sw.js file , every time you want to send a notification otherwise your pwa will pick up the data from cache and won’t have the new changes
+  Notifications are shown from the service worker not the web app. The service worker goes on its own thread, independent of the app. So this is what allows it to display notifications, even when the app is not action.
+  This means when we send notification, the serviceWorker does not have to be active, but just registered. So as soon as the serviceWorker gets registered we can send the notification.
+
+```ruby
+if ( 'serviceWorker' in navigator ) {
+
+	navigator.serviceWorker.register( '/sw.js' )
+		.then( ( res ) => {
+			console.warn( `Sevice Worker Registered ${res.scope}` );
+
+			// Check if notifications are supported
+			if ( 'Notification' in window ) {
+				console.warn( 'Notifications are supported' );
+
+				// Request permission from user to send notifications.
+				Notification.requestPermission().then( ( status ) => {
+					
+					if ( 'granted' === status ) {
+						// When service worker is ready to show a notification, show the notification in the promise method
+						navigator.serviceWorker.ready.then( ( registration ) =>  registration.showNotification( 'New Notification' ) );
+					}
+				} )
+			}
+		} )
+		.catch( err => console.warn( 'SW registration failed' + err ) )
+}
+```
+
 ## Installation :wrench:
 
 1. Clone this repo by running `git clone git@github.com:imranhsayed/pwa-concepts.git`
