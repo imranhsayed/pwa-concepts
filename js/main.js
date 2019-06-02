@@ -25,10 +25,39 @@ const handlePushNotification = () => {
 			console.warn( 'Notification Status', result );
 			if ( 'granted' === result ) {
 
+				const options = {
+					body: 'Check out the new GOW4',
+					icon: 'android-chrome-192x192.png',
+					data: {
+						timeStamp: Date.now(),
+						loc: 'index.html#info'
+					},
+					actions: [
+						{ action: 'go', title: 'Go Now' }
+					]
+				};
+
+				sendNotification( 'New Notification', options );
 			}
 		} )
 	}
 };
+
+const sendNotification = ( title, options ) => {
+	// When service worker is ready to show a notification, show the notification in the promise method
+	navigator.serviceWorker.ready.then( ( registration ) =>  registration.showNotification( title, options ) );
+
+};
+
+// Close Notification.
+const closeNotification = ( msg, event ) => {
+	console.warn( msg, event );
+	event.notification.close();
+};
+
+self.addEventListener( 'notificationclose', ( event ) => {
+	closeNotification( 'Notification Closed', event );
+} );
 
 // Check if the serviceWorker Object exists in the navigator object ( means if browser supports SW )
 if ( 'serviceWorker' in navigator ) {
