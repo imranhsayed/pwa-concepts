@@ -1,5 +1,5 @@
 // Cache version.
-const cacheName = 'CSv3';
+const cacheName = 'CSv4';
 
 /**
  * Paths for the files to be cached.
@@ -122,4 +122,47 @@ self.addEventListener( 'fetch', ( event ) => {
 				return response || fetch( event.request )
 			} )
 	);
+} );
+
+
+// Close Notification.
+const closeNotification = ( msg, event ) => {
+	console.warn( msg, event.notification );
+	event.notification.close();
+};
+
+// Listen to the notification close event.
+self.addEventListener( 'notificationclose', ( event ) => {
+	console.warn( 'came' );
+	closeNotification( 'Notification Closed', event );
+} );
+
+// Listen to when click event on Notification bar
+self.addEventListener( 'notificationclick', ( event ) => {
+	// If the user has not clicked on close button
+	if ( 'close' !== event.action ) {
+		event.waitUntil(
+			// Get all the clients associated with the service worker, of type window, including the uncontrolled ones.
+			self.clients.matchAll( { type: 'window', includeUncontrolled: true } )
+				.then( allClients => {
+
+					console.warn( allClients );
+
+					allClients.map( client => {
+						/**
+						 * Check if the client is visible,
+						 * then navigate/move it to the location set in event.notification.data.loc
+						 * Means screen will move to that html element with id you have specified in event.notification.data.loc
+						 */
+						if ( 'visible' === client.visibilityState ) {
+							console.warn( 'Navigating' );
+							client.navigate( event.notification.data.loc );
+							return;
+						}
+					})
+				} )
+		)
+	}
+
+	closeNotification( 'Notification Clicked', event );
 } );

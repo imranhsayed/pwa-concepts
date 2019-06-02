@@ -49,16 +49,6 @@ const sendNotification = ( title, options ) => {
 
 };
 
-// Close Notification.
-const closeNotification = ( msg, event ) => {
-	console.warn( msg, event );
-	event.notification.close();
-};
-
-self.addEventListener( 'notificationclose', ( event ) => {
-	closeNotification( 'Notification Closed', event );
-} );
-
 // Check if the serviceWorker Object exists in the navigator object ( means if browser supports SW )
 if ( 'serviceWorker' in navigator ) {
 
