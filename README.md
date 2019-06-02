@@ -204,6 +204,7 @@ self.addEventListener( 'notificationclick', ( event ) => {
 3. [service-worker-app](https://github.com/imranhsayed/pwa-concepts/tree/service-worker-app) A simple Service worker app.
 
 4. [pwa-app-http-server](https://github.com/imranhsayed/pwa-concepts/tree/pwa-app-http-server) A Progressive Web App 
+5. [send-notification-user-nav](https://github.com/imranhsayed/pwa-concepts/tree/send-notification-user-nav) Example of sending Notification in a PWA app. And when the user clicks on the notification, we can navigate him the section of the page we want 
 
 ##### Command
 * `npm run start` Starts your development server on [http://localhost:8081](http://localhost:8081)
