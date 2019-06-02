@@ -5,7 +5,7 @@
 
 ![](demo-service-workers.gif)
 
-## Sending Notifications in a PWA Demo :video_camera:
+## [Sending Notifications in a PWA Demo](https://github.com/imranhsayed/pwa-concepts/tree/send-notification-user-nav) :video_camera:
 ![](Notification.gif)
 
 ## Getting Started :rocket:
