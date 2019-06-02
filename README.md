@@ -95,6 +95,10 @@ self.addEventListener( 'activate', ( event ) => {
   Notifications are shown from the service worker not the web app. The service worker goes on its own thread, independent of the app. So this is what allows it to display notifications, even when the app is not action.
   This means when we send notification, the serviceWorker does not have to be active, but just registered. So as soon as the serviceWorker gets registered we can send the notification.
 
+> * So only once the service worker is registered, call our custom function handlePushNotification()
+  We can pass also options to the sendNotification. 
+> * In handlePushNotification(), Check is notifications are support , request permission and call sendNotification() to send notification  
+
 ```ruby
 if ( 'serviceWorker' in navigator ) {
 
@@ -110,14 +114,81 @@ if ( 'serviceWorker' in navigator ) {
 				Notification.requestPermission().then( ( status ) => {
 					
 					if ( 'granted' === status ) {
+					
+						const options = {
+                            body: 'Check out the new GOW4',
+                            icon: 'android-chrome-192x192.png',
+                            data: {
+                                timeStamp: Date.now(),
+                                loc: 'index.html#info'
+                            },
+                            actions: [
+                                { action: 'go', title: 'Go Now' }
+                            ]
+                        };
 						// When service worker is ready to show a notification, show the notification in the promise method
-						navigator.serviceWorker.ready.then( ( registration ) =>  registration.showNotification( 'New Notification' ) );
+						sendNotification( 'New Notification', options );
 					}
 				} )
 			}
 		} )
 		.catch( err => console.warn( 'SW registration failed' + err ) )
 }
+
+// Send notification
+const sendNotification = ( title ) => {
+	// When service worker is ready to show a notification, show the notification in the promise method
+	navigator.serviceWorker.ready.then( ( registration ) =>  registration.showNotification( title, options ) );
+
+};
+```
+
+## Tracking users behaviour to notifcations
+* You can listen to the event when user closes the notification
+* Add navigation to the relevant content when user clicks anywhere on the notification bar accept the close button
+
+```ruby
+// sw.js
+// Close Notification.
+const closeNotification = ( msg, event ) => {
+	console.warn( msg, event.notification.data );
+	event.notification.close();
+};
+
+self.addEventListener( 'notificationclose', ( event ) => {
+	console.warn( 'came' );
+	closeNotification( 'Notification Closed', event );
+} );
+
+// Listen to when click event on Notification bar, find the client which is visible and navigate the user to the relevant place in your page
+self.addEventListener( 'notificationclick', ( event ) => {
+	// If the user has not clicked on close button
+	if ( 'close' !== event.action ) {
+		event.waitUntil(
+			// Get all the clients associated with the service worker, of type window, including the uncontrolled ones.
+			self.clients.matchAll( { type: 'window', includeUncontrolled: true } )
+				.then( allClients => {
+
+					console.warn( allClients );
+
+					allClients.map( client => {
+						/**
+						 * Check if the client is visible,
+						 * then navigate/move it to the location set in event.notification.data.loc
+						 * Means screen will move to that html element with id you have specified in event.notification.data.loc
+						 */
+						if ( 'visible' === client.visibilityState ) {
+							console.warn( 'Navigating' );
+							client.navigate( event.notification.data.loc );
+							return;
+						}
+					})
+				} )
+		)
+	}
+
+	closeNotification( 'Notification Clicked', event );
+} );
 ```
 
 ## Installation :wrench:
