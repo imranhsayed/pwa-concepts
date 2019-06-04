@@ -33,6 +33,31 @@ A service worker is an event-driven javascript file, that is run in your browser
 * Responses are stored in the cache as a key value pair, where the key is the Request and the Response
 * Using a fetch event handler you can intercept all the requests, interrogate the Request object and execute your caching strategy.
 
+* So in below example, when any network request is made, we intercept that request,
+we use using `cache.match()` to check if we get response from cache, if not make a fetch request to network ( `fetch(event.request)` ),
+ put the new response in cache ( `cache.put()` ) and return the response.
+
+```ruby
+self.addEventListener("fetch", function(event) {
+	event.respondWith(
+		caches.open( cacheName )
+			.then( cache => {
+
+				return cache.match( event.request )
+					.then(response => {
+
+						// Check if you get response from cache, using cache.match(), if not make a fetch request to network , put the new response in cache and return the response
+						return response || fetch(event.request)
+												.then(function(response) {
+													cache.put(event.request, response.clone());
+													return response;
+												});
+					})
+			} )
+);
+});
+```
+
 ![](cache-fallback.png)
 
 ## Steps to Create a Progressive Web App:
