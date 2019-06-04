@@ -25,6 +25,8 @@ A service worker is an event-driven javascript file, that is run in your browser
 * handle network requests,
 * store content for offline usage, using caching and 
 * handle push messaging even when your browser is closed.
+* It provides a persistence medium for you to keep network requests like other pages, images, scripts, CSS files, etc. in a controllable cache. 
+* When a network request is made it passed through the service worker where you can decide if you will return the cached response or make the network round trip
 
 ## Steps to Create a Progressive Web App:
 
