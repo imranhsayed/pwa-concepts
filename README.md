@@ -25,8 +25,15 @@ A service worker is an event-driven javascript file, that is run in your browser
 * handle network requests,
 * store content for offline usage, using caching and 
 * handle push messaging even when your browser is closed.
+
+### How Service Workers work?
 * It provides a persistence medium for you to keep network requests like other pages, images, scripts, CSS files, etc. in a controllable cache. 
 * When a network request is made it passed through the service worker where you can decide if you will return the cached response or make the network round trip
+* The Cache API provides the methods you can programmatically use to manage how network responses are cached.
+* Responses are stored in the cache as a key value pair, where the key is the Request and the Response
+* Using a fetch event handler you can intercept all the requests, interrogate the Request object and execute your caching strategy.
+
+![](cache-fallback.png)
 
 ## Steps to Create a Progressive Web App:
 
@@ -57,6 +64,8 @@ A service worker goes through three steps in its lifecycle:
 1. Registration
 2. Installation
 3. Activation
+
+![](Service-Worker-LifeCycle.png)
 
 ### 1. Registration of Service Worker
 To install a service worker, you need to register it in your main JavaScript code. Registration tells the browser where your service worker is located, and to start installing it in the background. Let's look at an example:
