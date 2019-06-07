@@ -184,6 +184,7 @@ if ( 'serviceWorker' in navigator ) {
 
 ##### Command
 * `npm run start` Starts your development server on [http://localhost:8081](http://localhost:8081)
+* `Cmd + Shift + P > Type Clear Console history` Shortcut to clear cache data.
 
 ## Useful Link :point_right:
 
