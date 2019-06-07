@@ -49,6 +49,18 @@ const sendNotification = ( title, options ) => {
 
 };
 
+const subscribeToPush = () => {
+	navigator.serviceWorker.ready.then( registration => {
+		// Setting { userVisibleOnly: true } will ensure , only the notifications that the user can see will be send
+		reg.pushManager.subscribe( { userVisibleOnly: true } )
+			.then( subscription => {
+				console.warn( json.stringify( subscription ) );
+				console.warn( `Endpoint: ` + sub.endpoint );
+				console.warn( 'User subscribed' );
+			} )
+	} );
+};
+
 // Check if the serviceWorker Object exists in the navigator object ( means if browser supports SW )
 if ( 'serviceWorker' in navigator ) {
 
@@ -60,7 +72,10 @@ if ( 'serviceWorker' in navigator ) {
 		.then( ( res ) => {
 			console.warn( `Sevice Worker Registered ${res.scope}` );
 			// Handle Push Notification, only once the service worker is registered
-			handlePushNotification();
+			// handlePushNotification();
+
+			subscribeToPush();
+
 		} )
 		.catch( err => console.warn( 'SW registration failed' + err ) )
 
