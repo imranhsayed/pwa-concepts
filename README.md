@@ -159,6 +159,14 @@ if ( 'serviceWorker' in navigator ) {
 }
 ```
 
+## Push Notification Data Flow
+
+* Client access PWA > PWA persmission to send notification > Permission granted > Subsription object is created > Store the notification data in subscription
+* HTTP Post request > to Messaging Service ( like firebase ) > Messing server sends push message to client > App is awakened > Push message is routed to the correct Service Worker
+* User clicks on Notification > Code in the Notification Clicked event executes
+
+![](push-messagin-flow.png)
+
 ## Installation :wrench:
 
 1. Clone this repo by running `git clone git@github.com:imranhsayed/pwa-concepts.git`
