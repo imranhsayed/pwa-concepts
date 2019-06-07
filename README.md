@@ -16,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Basic knowledge of HTML CSS and JavaScript.
 
-## Service Workers
+## Service Workers :construction_worker:
 
 ### What are Service Workers?
 A service worker is an event-driven javascript file, that is run in your browser in the background, separate from your webpage.
