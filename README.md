@@ -1,10 +1,6 @@
 # PWA Concepts
 > * A demo for PWA Concepts.
 
-## Demo Serve Pages Offline using Service Workers :video_camera:
-
-![](demo-service-workers.gif)
-
 ## Getting Started :rocket:
 
 These instructions will get you a copy of the project up and running on your local machine for development purposes.
@@ -22,15 +18,6 @@ A service worker is an event-driven javascript file, that is run in your browser
 * handle network requests,
 * store content for offline usage, using caching and 
 * handle push messaging even when your browser is closed.
-
-#### Registration
-![](service-workers.png)
-
-### Installation
-![](service-worker-installed.png)
-
-### Cache Storage
-![](cache-storage.png)
 
 ## Service worker lifecycle
 A service worker goes through three steps in its lifecycle:
