@@ -1,464 +1,1183 @@
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+/*!
+Theme Name: codeytek
+Theme URI: http://underscores.me/
+Author: Smit Patadiya
+Author URI: https://academy.codeytek.com
+Description: NA
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: codeytek
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+codeytek is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+	 ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+	line-height: 1.15;
+	/* 1 */
+	-webkit-text-size-adjust: 100%;
+	/* 2 */
 }
 
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+/* Sections
+	 ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
 }
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+	 ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	box-sizing: content-box;
+	/* 1 */
+	height: 0;
+	/* 1 */
+	overflow: visible;
+	/* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace;
+	/* 1 */
+	font-size: 1em;
+	/* 2 */
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none;
+	/* 1 */
+	text-decoration: underline;
+	/* 2 */
+	text-decoration: underline dotted;
+	/* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b, strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code, kbd, samp {
+	font-family: monospace, monospace;
+	/* 1 */
+	font-size: 1em;
+	/* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button, input, optgroup, select, textarea {
+	font-family: inherit;
+	/* 1 */
+	font-size: 100%;
+	/* 1 */
+	line-height: 1.15;
+	/* 1 */
+	margin: 0;
+	/* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button, input {
+	/* 1 */
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button, select {
+	/* 1 */
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button, [type="button"], [type="reset"], [type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+legend {
+	box-sizing: border-box;
+	/* 1 */
+	color: inherit;
+	/* 2 */
+	display: table;
+	/* 1 */
+	max-width: 100%;
+	/* 1 */
+	padding: 0;
+	/* 3 */
+	white-space: normal;
+	/* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"], [type="radio"] {
+	box-sizing: border-box;
+	/* 1 */
+	padding: 0;
+	/* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield;
+	/* 1 */
+	outline-offset: -2px;
+	/* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	/* 1 */
+	font: inherit;
+	/* 2 */
+}
+
+/* Interactive
+	 ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body, button, input, select, optgroup, textarea {
+	color: #404040;
+	/* font-family: 'Montserrat', sans-serif; */
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
 }
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
 }
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
+ul, ol {
+	margin: 0 0 1.5em 3em;
 }
 
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul, li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active, button:focus, input[type="button"]:active, input[type="button"]:focus, input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active, input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
 }
 
 textarea {
-    resize: vertical;
+	width: 100%;
 }
 
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: royalblue;
 }
 
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+a:visited {
+	color: purple;
 }
 
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
+a:hover, a:focus, a:active {
+	color: midnightblue;
 }
 
-/* ===================
-    ALL: Blue Theme
-   =================== */
-
-.header-container {
-    border-bottom: 20px solid #264de4;
-    position: fixed;
-    width: 100%;
-    top: 0px;
+a:focus {
+	outline: thin dotted;
 }
 
-.footer-container,
-.main aside {
-    border-top: 20px solid #264de4;
+a:hover, a:active {
+	outline: 0;
 }
 
-.header-container,
-.footer-container,
-.main aside {
-    background: #2965f1;
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
 }
 
-.title {
-    color: white;
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
 }
 
-/* ==============
-    MOBILE: Menu
-   ============== */
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
 }
 
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: #264de4;
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
 }
 
-nav{
-    display: none;
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+	left: 100%;
 }
 
-nav a:hover,
-nav a:visited {
-    color: white;
+.main-navigation ul ul a {
+	width: 200px;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
+	left: auto;
 }
 
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
+.main-navigation li {
+	float: left;
+	position: relative;
 }
 
-.main article h1 {
-    font-size: 2em;
+.main-navigation a {
+	display: block;
+	text-decoration: none;
 }
 
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
+/* Small menu. */
+.menu-toggle, .main-navigation.toggled ul {
+	display: block;
 }
 
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: block;
+	}
 }
 
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 20px;
+.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-.subtitle{
-    font-size: 1.1em;
-    font-style: italic;
-    font-weight: bolder;
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
+	float: left;
+	width: 50%;
 }
 
-.responsiveImg {
-    margin: auto;
-    max-width: 128px;
-    border-radius: 50%;
-    padding: 0px 20px 10px 10px;
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
 }
 
-.main header, .main section, .main footer{
-    padding: 10px;
-    margin-bottom: 20px;
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
-.main header h1, .main section h2, .facultyContainer h4{
-    background: #2965f1;
-    color: white;
-    padding: 10px;
-    border-top: 20px solid #264de4;
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
 
-.facultyContainer{
-    padding: 5px;
-    
-}
-.facultyImage{
-    float: left;
-    width: 30%;
-    height: 30%;
-    min-width: 180px;
-    margin: auto;
-    text-align: center;
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
 }
 
-aside a{
-    color: white;
-    text-decoration: none;
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
 }
 
-.footerLinks{
-    float: right;
-    text-align: right;
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
 }
 
-.footerLinks a{
-    color: white;
-    text-decoration: none;
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#trigger{
-    float: right;
-    line-height: 10px;
-    padding: 5px;
-    height: 32px;
-    width: 32px;
-    position: fixed;
-    margin: 5px 10px 0px 15px;
-    cursor: pointer;
-    cursor: hand;
-    background-color: #264de4;
-    border-radius: 21px;
-    vertical-align: text-top;
-    right: 10px;
-    top: 10px;
-}
-.triggerLine{
-    display: block;
-    width: calc(100% - 9px);
-    text-align: center;
-    height: 2px;
-    background-color: white;
-    margin: 6px auto;
-    border-radius: 2px;
-}
-.main-container{
-    margin-top: 40px;
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
 }
 
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-@media only screen and (min-width: 480px) {
-
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-
-    nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-    #trigger{
-        display: block;
-    }
-    
-
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
-        margin: 0 0.7%;
-    }
+.clear:after, .entry-content:after, .comment-content:after, .site-header:after, .site-content:after, .site-footer:after {
+	clear: both;
 }
 
-@media only screen and (min-width: 768px) {
-
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-
-    .header-container,
-    .main aside,
-    .main header,
-    .main section,
-    .main footer {
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
-    }
-
-/* ============
-    WIDE: Menu
-   ============ */
-
-    .title {
-        float: left;
-    }
-
-    nav {
-        float: right;
-        width: 38%;
-        display: block !important;
-    }
-    #trigger{
-        display: none;
-    }
-
-/* ============
-    WIDE: Main
-   ============ */
-
-    .main article {
-        float: left;
-        width: 57%;
-    }
-
-    .main aside {
-        float: right;
-        width: 28%;
-    }
-    
-    .main-container{
-        margin-top: 100px;
-    }
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
 }
 
-@media only screen and (min-width: 1140px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
-    }
+.widget select {
+	max-width: 100%;
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
 }
 
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+.post, .page {
+	margin: 0 0;
 }
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+.updated:not(.published) {
+	display: none;
 }
 
-.invisible {
-    visibility: hidden;
+.page-content, .entry-content, .entry-summary {
+	margin: 1.5em 0 0;
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
 }
 
-.clearfix:after {
-    clear: both;
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
 }
 
-.clearfix {
-    *zoom: 1;
+.bypostauthor {
+	display: block;
 }
 
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, .infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
 
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley, .entry-content .wp-smiley, .comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+/* Make sure embeds and iframes fit their containers. */
+embed, iframe, object {
+	max-width: 100%;
+}
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-    thead {
-        display: table-header-group;
-    }
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+.wp-caption-text {
+	text-align: center;
+}
 
-    img {
-        max-width: 100% !important;
-    }
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/**
+ * Custom Style Start
+ */
+.site-header {
+	position: relative;
+}
+
+.site-branding {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 13px 0px;
+	background: #535461;
+	text-align: center;
+}
+
+.site-logo {
+	display: flex;
+	align-items: center;
+}
+
+.site-description {
+	color: #f2f2f2;
+	text-align: center;
+}
+
+.custom-logo-link {
+	border: 2px solid #fff;
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	margin-right: 14px;
+}
+.custom-logo-link img{
+	width: 100%;
+	height: 100%;
+}
+.site-title {
+	margin: 0;
+	padding: 0;
+}
+
+.site-title a {
+	text-decoration: none;
+	font-size: 1.4rem;
+	color: #ffffff;
+}
+
+.home-hero-container {
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	min-height: 80vh;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+	overflow: hidden;
+}
+
+.home-hero-container .hero-title h3 {
+	margin: 0;
+	font-size: 1.8rem;
+	display: inline-block;
+	color: #ffffff;
+	line-height: 1.2;
+}
+
+.hero-image-container {
+	max-width: 250px;
+	min-width: 250px;
+}
+
+.home-hero-filter {
+	width: 100%;
+	display: flex;
+	background: rgba(55, 170, 255, 0.87);
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+	z-index: 999;
+}
+
+.course-carousel {
+	margin: 20px 0;
+}
+
+.course-carousel .carouse-init {
+	padding: 0 10px;
+}
+
+.course-carousel .owl-item {
+	position: relative;
+}
+
+.course-carousel .owl-item img {
+	max-width: 100%;
+	width: auto;
+	max-height: 50px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.course-carousel .owl-stage {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.start-learing-btn {
+	display: inline-block;
+	font-size: 1.4rem;
+	line-height: 1;
+	padding: 10px 24px;
+	background: #41a8f0;
+	color: #fff;
+	border: 2px solid #379ae5;
+	border-radius: 3px;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	cursor: pointer;
+}
+
+.start-learing-btn:hover, .start-learing-btn:focus {
+	background: #747bf7;
+	border-color: #747bf7;
+}
+
+.start-learing-container {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.list-of-course-container {
+	background: #000;
+	color: #fff;
+	padding: 10px 15px 20px 15px;
+}
+
+.list-of-course-container .block-title {
+	font-size: 1.6rem;
+	text-align: center;
+	margin: 20px 0;
+}
+
+.list-of-course {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.list-of-course .list-item {
+	width: 100%;
+	flex-shrink: 0;
+	padding: 5px 0px;
+
+}
+
+.list-of-course .list-item .content {
+	background: #2b2b2b;
+	padding: 8px 20px;
+	border-radius:3px;
+	position: relative;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	transition: all 0.6s;
+	-webkit-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+	-ms-transition: all 0.6s;
+	-o-transition: all 0.6s;
+}
+
+.list-of-course .list-item:hover .content,
+.list-of-course .list-item:focus .content{
+	background: #525252;
+}
+
+.list-of-course .list-item .title a {
+	color: #ffde3a;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+.list-of-course .list-item .detail {
+	font-size: 0.8rem;
+	color: #989898;
+}
+
+.list-of-course .list-item .c-count {
+	color: #fff;
+	font-size: 0.9rem;
+}
+.site-info{
+	display: block;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	color: #676767;
+}
+.social-icon{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+@media screen and (min-width: 500px) {
+	.home-hero-filter {
+		flex-direction: row;
+	}
+
+	.hero-image-container {
+		min-width: 220px;
+	}
+
+	.home-hero-container .hero-title {
+		margin-left: 10px;
+		max-width: 271px;
+	}
+
+	.home-hero-container .hero-title h3 {
+		text-align: left;
+		line-height: 1.4;
+	}
+	.site-info{
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.home-hero-container {
+		min-height: 400px;
+	}
+
+	.home-hero-container .hero-title h3 {
+		font-size: 2.2rem;
+	}
+
+	.home-hero-container .hero-title {
+		margin-left: 4rem;
+	}
+
+	.list-of-course .list-item {
+		width: 50%;
+		padding: 5px 10px;
+	}
+
+	.list-of-course-container .list-of-course {
+		max-width: 700px;
+		margin: auto;
+	}
+}
+
+@media only screen and (device-width: 768px) {
+	/* For general iPad layouts */ .home-hero-container {
+	min-height: 400px;
+}
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+	/* For portrait layouts only */ .home-hero-container {
+	min-height: 400px;
+}
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+	/* For landscape layouts only */
+}
+
+@media screen and (min-width: 992px) {
+	.home-hero-container {
+		min-height: 75vh;
+	}
+
+	.home-hero-container .hero-title {
+		max-width: 380px;
+	}
+
+	.home-hero-container .hero-title h3 {
+		font-size: 3rem;
+	}
+
+	.hero-image-container {
+		max-width: 350px;
+	}
+
+	.course-carousel .owl-item img {
+		max-height: 65px;
+	}
+
+	.start-learing-container {
+		margin: 50px 0;
+	}
+
+	.start-learing-btn {
+		font-size: 2rem;
+	}
 }

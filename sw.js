@@ -1,5 +1,5 @@
 // Cache version.
-const cacheName = 'CSv3';
+const cacheName = 'CSv2';
 
 /**
  * Paths for the files to be cached.
@@ -15,11 +15,12 @@ const cachedFiles = [
 	'/manifest.json',
 	'/js/main.js',
 	'/css/main.css',
-	'/css/normalize.min.css',
-	'/img/cassidy.jpg',
-	'/img/cramer.jpg',
-	'/img/duffy.jpg',
-	'/img/gabor.jpg'
+	'/img/logo.png',
+	'/img/banner-art.png',
+	'/favicon-32x32.png',
+	'/favicon-16x16.png',
+	'/android-chrome-192x192.png',
+
 ];
 
 /**
@@ -100,7 +101,7 @@ self.addEventListener( 'activate', ( event ) => {
  */
 self.addEventListener( 'fetch', ( event ) => {
 
-	console.warn( `Fetch event occured on url: ${event.request.url}` );
+
 
 	/**
 	 * respondWith() takes a promise
