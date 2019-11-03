@@ -37,7 +37,13 @@ self.addEventListener( 'install', ( event ) => {
 	/**
 	 * Add the files to the cache
 	 *
+	 * waitUntil():
 	 * event has a method called waitUntil, which takes a promise. In this case caches.open()
+	 * The waitUntil function extends the lifetime of the install and activate events to ensures that any functional events (like FetchEvent)
+	 * are not dispatched until it upgrades database schemas and deletes the outdated cache entries.
+	 *
+	 * caches: is a global cache variable.
+	 *
 	 * The caches.open() takes the cache version as cacheName and returns the cache object in promise.
 	 * This cache object has a method called addAll() which adds the files that you pass as param to the cache memory.
 	 *
@@ -59,8 +65,7 @@ self.addEventListener( 'install', ( event ) => {
 
 /*
  * Check the global cache variable, If the new cache version is not the same as the old one delete the old cache
- * , when the SW is activated
- *
+ * when the SW is activated
  */
 self.addEventListener( 'activate', ( event ) => {
 
@@ -100,8 +105,6 @@ self.addEventListener( 'activate', ( event ) => {
  * Then we can respond with the cached files.
  */
 self.addEventListener( 'fetch', ( event ) => {
-
-
 
 	/**
 	 * respondWith() takes a promise
