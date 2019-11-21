@@ -1,5 +1,5 @@
 # PWA Concepts
-> * A demo for PWA Concepts
+> * A demo for PWA Concepts.
 
 ## Serve Pages Offline using Service Workers Demo :video_camera:
 
