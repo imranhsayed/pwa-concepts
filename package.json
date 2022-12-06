@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/imranhsayed/pwa-concepts#readme",
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.2"
   }
 }
